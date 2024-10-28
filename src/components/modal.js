@@ -3,10 +3,10 @@ export const modal = document.createElement('div');
 modal.className = 'modal';
 
 const modalContent = document.createElement('div');
-modalContent.className = 'modal-content';
+modalContent.className = 'modal__content';
 
 const modalMessage = document.createElement('div');
-modalMessage.id = 'modal-message';
+modalMessage.id = 'modal__message';
 
 modalContent.append(modalMessage);
 modal.append(modalContent);
@@ -22,7 +22,7 @@ window.onclick = (e) => {
 export const openModal = (message) => {
   const modal = document.querySelector('.modal');
   modal.classList.add('modal_open')
-  const modalMessage = document.getElementById('modal-message');
+  const modalMessage = document.getElementById('modal__message');
   modalMessage.textContent = message;
   document.body.style.overflow = 'hidden';
 };

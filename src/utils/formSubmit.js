@@ -3,7 +3,7 @@ export const submitForm = async (form) => {
   const data = Object.fromEntries(formData.entries());
 
   try {
-    const response = await fetch('https://api-endpoint.com/submit', {
+    const response = await fetch('http://localhost:9090/send', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -13,10 +13,10 @@ export const submitForm = async (form) => {
 
     const result = await response.json();
 
-    if (result.status === 'error') {
-      return result.fields;
-    } else if (result.status === 'success') {
-      return { msg: result.msg };
+    if (response.ok) {
+      return { msg: result.message };
+    } else {
+      return { msg: result.message };
     }
   } catch (error) {
     console.error('Ошибка при отправке формы:', error);

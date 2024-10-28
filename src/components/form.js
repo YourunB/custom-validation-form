@@ -56,20 +56,24 @@ btnSubmit.addEventListener('click', async (event) => {
   if (isValid) {
     const result = await submitForm(form);
 
-    if (result.msg) {
-      openModal(result.msg);
-      handleCloseForm();
-      form.reset();
-    }
+    if (result) {
+      if (result.msg) {
+        openModal(result.msg);
+        handleCloseForm();
+        form.reset();
+      }
 
-    if (result.fields) {
-      for (const [fieldName, errorMessage] of Object.entries(result.fields)) {
-        const field = form.querySelector(`[name="${fieldName}"]`);
-        if (field) {
-          field.classList.add('input-error');
-          showError(field, errorMessage);
+      if (result.fields) {
+        for (const [key, message] of Object.entries(result.fields)) {
+          const inputField = form.querySelector(`[name="${key}"]`);
+          const errorMessage = document.createElement('div');
+          errorMessage.className = 'error-message';
+          errorMessage.textContent = message;
+          inputField.parentNode.insertBefore(errorMessage, inputField.nextSibling);
         }
       }
+    } else {
+      console.error('Не удалось получить результат от сервера');
     }
   }
 });

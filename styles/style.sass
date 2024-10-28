@@ -2,6 +2,7 @@ $dark: #000000
 $dark-middle: #484848
 $light: #ffffff
 $submit: #78c223
+$error: #d3231d
 
 body
   padding: 0
@@ -31,22 +32,24 @@ body
 .form h3
   text-align: center
 
-.form input,
-.form textarea
+.form__input,
+.form__msg
   width: calc( 100% - 10px )
-  border: solid 2px $dark-middle
   font-family: monospace
   padding: 5px
   outline: none
   font-weight: 700
+  font-size: 14px
 
-.form input
+.form__input
   border: none
   border-bottom: solid 2px $dark-middle
 
-.form textarea
+.form__msg
   height: 100px
   overflow-y: auto
+  border-radius: 3px
+  border: solid 2px $dark-middle
 
 .form button
   display: block
@@ -81,6 +84,14 @@ body
 .btn-open_hide
   transform: translateX(100vw)
   opacity: 0
+
+.input-error
+  border-color: $error
+
+.error-message
+  color: $error
+  font-size: 12px
+  margin-top: 5px
 
 @media (hover:hover)
   .btn-open:hover,

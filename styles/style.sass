@@ -39,7 +39,7 @@ body
   padding: 5px
   outline: none
   font-weight: 700
-  font-size: 14px
+  font-size: 1.2em
 
 .form__input
   border: none
@@ -79,7 +79,7 @@ body
   border: none
   outline: none
   opacity: 1
-  font-size: 20px
+  font-size: 1.5em
 
 .btn-open_hide
   transform: translateX(100vw)
@@ -90,8 +90,32 @@ body
 
 .error-message
   color: $error
-  font-size: 12px
+  font-size: 0.8em
   margin-top: 5px
+
+.modal
+  position: fixed
+  z-index: 100
+  max-width: 500px
+  min-height: 300px
+  overflow-y: hidden
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  align-content: center
+  font-weight: 700
+  color: $dark
+  background-color: $light
+  width: 100%
+  top: 50%
+  left: 50%
+  transform: translate(100vw, -50%)
+  font-size: 1.2em
+  border-radius: 3px
+  transition: 1s
+
+.modal_open
+  transform: translate(-50%, -50%)
 
 @media (hover:hover)
   .btn-open:hover,

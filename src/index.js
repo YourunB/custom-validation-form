@@ -1,5 +1,5 @@
 import '../styles/style.sass'
-import { form } from './ui/form.js';
+import { form } from './components/form.js';
 
 export const app = document.createElement('div');
 app.classList.add('container');

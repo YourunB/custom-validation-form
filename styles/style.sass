@@ -1,0 +1,129 @@
+$dark: #000000
+$dark-middle: #484848
+$light: #ffffff
+$submit: #78c223
+$error: #d3231d
+
+body
+  padding: 0
+  margin: 0
+  font-family: monospace
+  overflow-x: hidden
+
+.container
+  min-height: 100vh
+  width: 100%
+  background: $dark
+  display: flex
+  justify-content: center
+  align-items: center
+
+.form
+  border-radius: 3px
+  padding: 10px
+  min-height: 200px
+  max-width: 400px
+  width: 100%
+  background: $light
+  overflow-y: auto
+  opacity: 1
+  transition: 1s
+
+.form h3
+  text-align: center
+
+.form__input,
+.form__msg
+  width: calc( 100% - 10px )
+  font-family: monospace
+  padding: 5px
+  outline: none
+  font-weight: 700
+  font-size: 1.2em
+
+.form__input
+  border: none
+  border-bottom: solid 2px $dark-middle
+
+.form__msg
+  height: 100px
+  overflow-y: auto
+  border-radius: 3px
+  border: solid 2px $dark-middle
+
+.form button
+  display: block
+  outline: none
+  margin: auto
+  border: none
+  padding: 5px
+  color: $light
+  font-weight: 700
+  border-radius: 3px
+  background-color: $submit
+  transition: 1s
+
+.form_hide
+  opacity: 0
+  transform: translateX(-100vw)
+
+.btn-open
+  display: block
+  width: 150px
+  height: 150px
+  background-color: $light
+  border-radius: 50%
+  position: absolute
+  font-weight: 700
+  transition: 1s
+  border: none
+  outline: none
+  opacity: 1
+  font-size: 1.5em
+
+.btn-open_hide
+  transform: translateX(100vw)
+  opacity: 0
+
+.input-error
+  border-color: $error
+
+.error-message
+  color: $error
+  font-size: 0.8em
+  margin-top: 5px
+
+.modal
+  position: fixed
+  z-index: 100
+  max-width: 500px
+  min-height: 300px
+  overflow-y: hidden
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  align-content: center
+  font-weight: 700
+  color: $dark
+  background-color: $light
+  width: 100%
+  top: 50%
+  left: 50%
+  transform: translate(100vw, -50%)
+  font-size: 1.2em
+  border-radius: 3px
+  transition: 1s
+
+.modal_open
+  transform: translate(-50%, -50%)
+
+@media (hover:hover)
+  .btn-open:hover,
+  .form button:hover
+    cursor: pointer
+    transform: scale(1.1)
+
+  .btn-open:active,
+  .form button:active
+    transition: 0.2s
+    transform: scale(0.9)

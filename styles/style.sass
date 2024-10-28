@@ -58,6 +58,7 @@ body
   font-weight: 700
   border-radius: 3px
   background-color: $submit
+  transition: 1s
 
 .form_hide
   opacity: 0
@@ -77,16 +78,17 @@ body
   opacity: 1
   font-size: 20px
 
-
 .btn-open_hide
   transform: translateX(100vw)
   opacity: 0
 
 @media (hover:hover)
-  .btn-open:hover
+  .btn-open:hover,
+  .form button:hover
     cursor: pointer
     transform: scale(1.1)
 
-  .btn-open:active
+  .btn-open:active,
+  .form button:active
     transition: 0.2s
     transform: scale(0.9)

@@ -7,9 +7,11 @@ app.classList.add('container');
 document.body.append(app)
 app.append(openFormButton, form);
 
-app.addEventListener('click', () => {
-  form.classList.add('form_hide')
-  openFormButton.classList.remove('btn-open_hide')
+app.addEventListener('click', (e) => {
+  if (e.target.classList.contains('container')) {
+    form.classList.add('form_hide')
+    openFormButton.classList.remove('btn-open_hide')
+  }
 })
 
 openFormButton.addEventListener('click', (e) => {
